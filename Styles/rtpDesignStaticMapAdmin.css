@@ -1,0 +1,17 @@
+﻿
+#StaticMapGoogleMapCanvas {
+    width: 99%;
+    height: 350px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#StaticMapGeocomplete {
+    width: 60%;
+    line-height: 1.5em;
+}
+
+/* Autocomplete goes behind jquery without this: http://stackoverflow.com/a/9075864/156388 */
+.pac-container {
+    z-index: 1200 !important;
+}

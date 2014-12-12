@@ -1,0 +1,7 @@
+﻿@if (Model.Visible)
+{
+<aside class="box">
+    <h3>Central Coverage Location</h3>
+    <img src="http://maps.google.com/maps/api/staticmap?&zoom=@Model.ZoomLevel&size=256x256&maptype=roadmap&markers=color:blue|@Model.Latitude,@Model.Longitude&sensor=false" />
+</aside>
+}

@@ -1,0 +1,12 @@
+﻿Name: rtpDesign.StaticMap
+AntiForgery: enabled
+Author: rtpDesign
+Website: http://www.rtpdesign.co.uk/projects/orchard/rtpdesign.staticmap/
+Version: 1.0
+OrchardVersion: 1.8
+Description: Deluxe static map ContentPart for a page with a drag and drop, geocode admin interface
+Features:
+    rtpDesign.StaticMap:
+        Description: Deluxe static map ContentPart for a page with a drag and drop, geocode admin interface
+		Dependencies: Orchard.jQuery
+		Category: Geolocation

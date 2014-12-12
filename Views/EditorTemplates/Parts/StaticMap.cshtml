@@ -1,0 +1,73 @@
+﻿@model rtpDesign.StaticMap.Models.StaticMapPart
+
+@{
+    Style.Require("jQueryUI_Orchard");
+    Script.Require("jQueryUI_Dialog");
+
+    Script.Require("jQuery_Geocomplete");
+
+    Script.Require("rtpDesign_StaticMap_Admin");
+    Style.Require("rtpDesign_StaticMap_Admin");
+}
+
+@* http://ubilabs.github.io/geocomplete/ *@
+@* https://support.google.com/webmasters/answer/146861?hl=en *@
+
+<fieldset>
+    <legend>Static Map Location</legend>
+
+    <fieldset>
+        <div class="checkbox-and-label">
+            @Html.CheckBoxFor(model => model.Visible, new { @class = "StaticMapVisible check-box" })
+            @Html.LabelFor(model => model.Visible, new { @class = "forcheckbox" })
+        </div>
+    </fieldset>
+
+    <fieldset class="StaticMap">
+        <button id="StaticMapFindAddress">Find Address</button>
+
+        <div style="display: none;">
+            <div id="StaticMapPanelSource" title="Find address location">
+                <p>Type the address you want to locate into the input box below the map.</p>
+                <p>Drag the marker to fine tune.</p>
+                <p>Zoom in and out to set static map zoom level.</p>
+                <div id="StaticMapGoogleMapCanvas"></div>
+
+                <input id="StaticMapGeocomplete" type="text" placeholder="Type in an address" class="large text text-box single-line" />
+                <button id="StaticMapFind">Find Address</button>
+                <button id="StaticMapReset" style="display: none;">Reset Marker</button>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Latitude)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Latitude, new { @class = "StaticMapLatitude", data_geo = "lat" })
+            @Html.ValidationMessageFor(model => model.Latitude)
+        </div>
+        <div class="hint">Enter the central latitude for the map</div>
+    </fieldset>
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Longitude)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Longitude, new { @class = "StaticMapLongitude", data_geo = "lng" })
+            @Html.ValidationMessageFor(model => model.Longitude)
+        </div>
+        <div class="hint">Enter the central longitude for the map</div>
+    </fieldset>
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZoomLevel)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ZoomLevel, new { @class = "StaticMapZoomLevel" })
+            @Html.ValidationMessageFor(model => model.ZoomLevel)
+        </div>
+        <div class="hint">Enter the map zoom level (1-21).</div>
+    </fieldset>
+
+</fieldset>
